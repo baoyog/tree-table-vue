@@ -120,3 +120,4 @@ more information please see [example...](https://github.com/MisterTaki/vue-table
 | 方法名 | 说明 | 参数 |
 | ---- | ---- | ---- |
 | getCheckedProp | 当表格为多选类型表格时，用于获取当前所选项的属性，返回一个数组；属性默认为'index'。 | prop |
+| getCheckedPropWithRoot | 当表格为多选类型表格时，用于获取当前所选项的属性及父级，返回一个数组；属性默认为'index'。 | prop |
