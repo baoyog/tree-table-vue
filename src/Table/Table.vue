@@ -52,6 +52,7 @@
         _isHover: false,
         _isExpanded: false,
         _isChecked: false,
+        _indeterminate: false,
         _level: level,
         _isHide: isFold ? level !== 1 : false,
         _isFold: isFold,
@@ -291,6 +292,22 @@
         const checkedIndexs = [];
         this.bodyData.forEach((item, index) => {
           if (item._isChecked) {
+            if (key === 'index') {
+              checkedIndexs.push(index);
+            } else {
+              checkedIndexs.push(item[key]);
+            }
+          }
+        });
+        return checkedIndexs;
+      },
+      getCheckedPropWithRoot(key = 'index') {
+        if (!this.selectable) {
+          return [];
+        }
+        const checkedIndexs = [];
+        this.bodyData.forEach((item, index) => {
+          if (item._isChecked || item._indeterminate) {
             if (key === 'index') {
               checkedIndexs.push(index);
             } else {

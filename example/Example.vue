@@ -6,6 +6,7 @@
         <zk-switch v-model="props[item.name]"></zk-switch>
       </li>
     </ul>
+    <a @click="getVal()">选中值</a>
     <tree-table
       ref="table"
       sum-text="sum"
@@ -19,7 +20,7 @@
       :show-row-hover="props.showRowHover"
       :show-index="props.showIndex"
       :tree-type="props.treeType"
-      select-type="radio"
+      select-type="checkbox"
       :is-fold="props.isFold"
       :expand-type="props.expandType"
       expand-key="sex"
@@ -237,6 +238,10 @@
     methods: {
       handleRadioClick(option) {
         console.log(option); // eslint-disable-line
+      },
+      getVal() {
+        const keyArr = this.$refs.table.getCheckedPropWithRoot('name');
+        console.log(keyArr);
       },
     },
   };

@@ -216,6 +216,9 @@ export default {
               }
             }
           }
+          // row._indeterminate = indeterminate;
+          this.table.bodyData[rowIndex]._indeterminate = indeterminate;
+
           res = <Checkbox
             indeterminate={ indeterminate }
             value={ allCheck }
